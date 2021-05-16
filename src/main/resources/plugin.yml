@@ -1,0 +1,4 @@
+name: Homes
+version: @version@
+main: com.m4kvn.spigot.homes.Homes
+api-version: 1.16
