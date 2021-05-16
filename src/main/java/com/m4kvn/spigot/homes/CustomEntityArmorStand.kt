@@ -1,11 +1,11 @@
 package com.m4kvn.spigot.homes
 
 import net.minecraft.server.v1_16_R3.*
-import org.bukkit.ChatColor
 import org.bukkit.Location
 import org.bukkit.craftbukkit.v1_16_R3.CraftWorld
+import org.bukkit.entity.Player
 
-class CustomEntityArmorStand(location: Location) :
+class CustomEntityArmorStand(location: Location, player: Player, name: String) :
     EntityArmorStand(EntityTypes.ARMOR_STAND, (location.world as CraftWorld).handle) {
 
     init {
@@ -19,7 +19,7 @@ class CustomEntityArmorStand(location: Location) :
         isSmall = true
         collides = false
 
-        super.setCustomName(ChatComponentText("${ChatColor.RED}Homes"))
+        super.setCustomName(ChatComponentText("${player.name}'s $name"))
         super.setCustomNameVisible(true)
     }
 
